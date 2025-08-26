@@ -1,0 +1,200 @@
+/* General styles for non-homepage content pages */
+.page-content {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin-top: 50px; /* space below the logo/header area */
+}
+
+.page-content h2 {
+    font-size: 2.2rem;
+    color: #00bfff;
+    border-bottom: 2px solid #00bfff;
+    padding-bottom: 10px;
+    margin-bottom: 2rem;
+}
+
+/* About Us Page */
+.about-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Trailers & Investments Page */
+.trailer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.trailer-item {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #004e92;
+}
+
+.trailer-item video {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.investment-snippet {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(0, 4, 40, 0.6);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.investment-snippet p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.investment-snippet p:first-child {
+    font-weight: bold;
+}
+
+.investment-snippet p:last-child {
+    color: #ffc107; /* A gold/yellow color for the "hot deal" text */
+    font-weight: bold;
+}
+
+/* Investment Description */
+.investment-description {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+}
+
+.investment-description p, .investment-description ul {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.investment-description ul {
+    list-style: none;
+    padding: 0;
+}
+
+.investment-description ul li {
+    padding: 5px 0;
+}
+
+.investment-description .investment-cta {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: #00bfff;
+}
+
+/* Contact Form */
+.contact-form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid #004e92;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #00bfff;
+    box-shadow: 0 0 5px #00bfff;
+}
+
+.btn {
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #00bfff;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background-color: #009acd;
+}
+
+/* Auth Pages (Login/Register) */
+.auth-switch {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.auth-switch a {
+    color: #00bfff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* For Tablets and smaller */
+@media (max-width: 992px) {
+    .page-content {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .page-content h2 {
+        font-size: 2rem;
+    }
+}
+
+/* For Mobile Phones */
+@media (max-width: 768px) {
+    .page-content {
+        width: 95%;
+        padding: 1rem;
+        margin-top: 20px;
+    }
+
+    .page-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-section p {
+        font-size: 1rem;
+    }
+
+    .trailer-grid {
+        /* Switch to a single column layout on mobile */
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
