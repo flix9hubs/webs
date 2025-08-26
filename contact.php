@@ -1,4 +1,5 @@
 <?php
+session_start();
 $page_title = 'Contact Us - Flix9 Hub';
 $page_css = ['css/pages.css'];
 include 'includes/header.php';

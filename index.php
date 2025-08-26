@@ -1,4 +1,5 @@
 <?php
+session_start();
 $page_title = 'Flix9 Hub - Invest in Cinema';
 $body_class = 'homepage';
 include 'includes/header.php';

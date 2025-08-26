@@ -28,7 +28,12 @@ $page_css = isset($page_css) ? $page_css : [];
                 <li><a href="trailers.php">Trailers</a></li>
                 <li><a href="investments.php">Investments</a></li>
                 <li><a href="contact.php">Contact Us</a></li>
-                <li><a href="login.php">Login / Register</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li><a href="investor_dashboard.php">Dashboard</a></li>
+                    <li><a href="logout.php">Logout</a></li>
+                <?php else: ?>
+                    <li><a href="login.php">Login / Register</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
         <div class="logo-container">
