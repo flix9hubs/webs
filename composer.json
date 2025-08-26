@@ -1,0 +1,14 @@
+{
+    "name": "flix9/hub",
+    "description": "A PHP-based cinema investment website.",
+    "type": "project",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Jules"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.10"
+    }
+}
