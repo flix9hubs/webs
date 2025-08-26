@@ -7,6 +7,9 @@ require 'includes/data.php'; // Include the dummy data
 ?>
 
     <main>
+        <div class="sub-quote">
+            <h2>“Ungal Ticket, Ungal Future — Invest in the Magic of Tamil Cinema.”</h2>
+        </div>
         <section class="homepage">
             <div class="main-quote">
                 <h1>Turn your passion for cinema into profits — invest in the magic of movies. 🎥💙</h1>
