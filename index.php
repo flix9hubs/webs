@@ -3,6 +3,7 @@ session_start();
 $page_title = 'Flix9 Hub - Invest in Cinema';
 $body_class = 'homepage';
 include 'includes/header.php';
+require 'includes/data.php'; // Include the dummy data
 ?>
 
     <main>
@@ -12,17 +13,16 @@ include 'includes/header.php';
             </div>
             <div class="carousel-container">
                 <div class="carousel-track">
-                    <div class="slide"><img src="images/poster1.jpg" alt="Movie Poster 1"></div>
-                    <div class="slide"><img src="images/poster2.jpg" alt="Movie Poster 2"></div>
-                    <div class="slide"><img src="images/poster3.jpg" alt="Movie Poster 3"></div>
-                    <div class="slide"><img src="images/poster4.jpg" alt="Movie Poster 4"></div>
-                    <div class="slide"><img src="images/poster5.jpg" alt="Movie Poster 5"></div>
-                    <!-- Duplicate for seamless scroll -->
-                    <div class="slide"><img src="images/poster1.jpg" alt="Movie Poster 1"></div>
-                    <div class="slide"><img src="images/poster2.jpg" alt="Movie Poster 2"></div>
-                    <div class="slide"><img src="images/poster3.jpg" alt="Movie Poster 3"></div>
-                    <div class="slide"><img src="images/poster4.jpg" alt="Movie Poster 4"></div>
-                    <div class="slide"><img src="images/poster5.jpg" alt="Movie Poster 5"></div>
+                    <?php
+                    // Original posters
+                    foreach ($homepage_carousel_posters as $poster_url) {
+                        echo '<div class="slide"><img src="' . htmlspecialchars($poster_url) . '" alt="Movie Poster"></div>';
+                    }
+                    // Duplicate for seamless scroll effect
+                    foreach ($homepage_carousel_posters as $poster_url) {
+                        echo '<div class="slide"><img src="' . htmlspecialchars($poster_url) . '" alt="Movie Poster"></div>';
+                    }
+                    ?>
                 </div>
             </div>
         </section>

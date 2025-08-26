@@ -9,7 +9,7 @@ $page_css = isset($page_css) ? $page_css : [];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($page_title); ?></title>
-    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="icon" href="https://i.postimg.cc/fbmrzG7g/FLIX9-ALPHA-300-X300-1.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
     <?php
     if (!empty($page_css)) {
@@ -43,6 +43,6 @@ $page_css = isset($page_css) ? $page_css : [];
         </nav>
         <div class="logo-container">
             <!-- Logo will go here -->
-            <img src="images/logo.png" alt="Flix9 Hub Logo" class="logo">
+            <img src="https://i.postimg.cc/fbmrzG7g/FLIX9-ALPHA-300-X300-1.png" alt="Flix9 Hub Logo" class="logo">
         </div>
     </header>

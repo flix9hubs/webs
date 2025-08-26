@@ -37,10 +37,7 @@ $fullname = $_SESSION['user_fullname'] ?? 'Investor';
                 <?php else: ?>
                     <?php foreach ($upcoming_projects as $project): ?>
                         <div class="trailer-item">
-                            <video controls width="100%" poster="images/poster_placeholder.jpg">
-                                <source src="<?php echo htmlspecialchars($project['video_path']); ?>" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                            <img src="<?php echo htmlspecialchars($project['poster_path']); ?>" alt="<?php echo htmlspecialchars($project['title']); ?> Poster" style="width:100%; border-radius: 5px;">
                             <div class="investment-snippet">
                                 <p><?php echo htmlspecialchars($project['hot_deal_snippet']); ?></p>
                             </div>
