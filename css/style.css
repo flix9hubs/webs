@@ -94,7 +94,7 @@ footer {
 /* Homepage specific styles */
 body.homepage {
     /* The gradient is layered on top of the image */
-    background-image: linear-gradient(to right, rgba(0, 4, 40, 0.85), rgba(0, 78, 146, 0.85)), url('../images/background.jpg');
+    background-image: linear-gradient(to right, rgba(0, 4, 40, 0.85), rgba(0, 78, 146, 0.85)), url('https://i.postimg.cc/gjYqP54R/golden-film-reel-on-dark-blue-background-vector-45998213.jpg');
     background-size: cover, cover;
     background-position: center, center;
     background-attachment: fixed; /* Keeps the background stationary */
@@ -235,4 +235,32 @@ body.homepage {
     .carousel-container::after {
         width: 50px; /* Smaller fade effect */
     }
+}
+
+/* --- Splash Screen Styles --- */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000428;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Highest z-index */
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+#splash-screen.hidden {
+    opacity: 0;
+    pointer-events: none; /* Make it non-interactive when hidden */
+}
+
+#splash-video {
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
 }

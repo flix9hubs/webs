@@ -20,6 +20,11 @@ $page_css = isset($page_css) ? $page_css : [];
     ?>
 </head>
 <body class="<?php echo isset($body_class) ? $body_class : ''; ?>">
+
+    <div id="splash-screen">
+        <video id="splash-video" src="videos/splash-logo.mp4" autoplay muted playsinline></video>
+    </div>
+
     <header>
         <nav>
             <ul>
