@@ -1,0 +1,48 @@
+<?php
+// Default values
+$page_title = isset($page_title) ? $page_title : 'Flix9 Hub';
+$page_css = isset($page_css) ? $page_css : [];
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo htmlspecialchars($page_title); ?></title>
+    <link rel="icon" href="https://i.postimg.cc/fbmrzG7g/FLIX9-ALPHA-300-X300-1.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+    <?php
+    if (!empty($page_css)) {
+        foreach ($page_css as $css_file) {
+            echo '<link rel="stylesheet" href="' . htmlspecialchars($css_file) . '">';
+        }
+    }
+    ?>
+</head>
+<body class="<?php echo isset($body_class) ? $body_class : ''; ?>">
+
+    <div id="splash-screen">
+        <video id="splash-video" src="videos/splash-logo.mp4" autoplay muted playsinline></video>
+    </div>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.php">About Us</a></li>
+                <li><a href="trailers.php">Trailers</a></li>
+                <li><a href="investments.php">Investments</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li><a href="investor_dashboard.php">Dashboard</a></li>
+                    <li><a href="logout.php">Logout</a></li>
+                <?php else: ?>
+                    <li><a href="login.php">Login / Register</a></li>
+                <?php endif; ?>
+            </ul>
+        </nav>
+        <div class="logo-container">
+            <!-- Logo will go here -->
+            <img src="https://i.postimg.cc/fbmrzG7g/FLIX9-ALPHA-300-X300-1.png" alt="Flix9 Hub Logo" class="logo">
+        </div>
+    </header>

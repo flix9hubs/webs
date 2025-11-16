@@ -1,0 +1,279 @@
+/* General Body Styles */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #000428, #004e92);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header and Navigation */
+header {
+    width: 100%;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #00bfff; /* A lighter blue for hover */
+}
+
+/* Logo */
+.logo-container {
+    text-align: center;
+    margin-top: 100px; /* Pushes the logo down from the header */
+}
+
+.logo {
+    width: 200px; /* Adjust as needed */
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Main Content */
+main {
+    flex: 1;
+    padding-top: 150px; /* Adjust based on header and logo height */
+    padding-bottom: 60px; /* Adjust based on footer height */
+}
+
+.homepage {
+    text-align: center;
+}
+
+.main-quote h1 {
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.sub-quote {
+    text-align: center;
+    margin: -20px 0 20px 0; /* Adjust margin to place it nicely */
+    padding: 0 1rem;
+}
+
+.sub-quote h2 {
+    font-size: 1.5rem;
+    color: #FFD700; /* Gold color */
+    font-style: italic;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+}
+
+/* Homepage specific styles */
+body.homepage {
+    /* The gradient is layered on top of the image */
+    background-image: linear-gradient(to right, rgba(0, 4, 40, 0.85), rgba(0, 78, 146, 0.85)), url('https://i.postimg.cc/gjYqP54R/golden-film-reel-on-dark-blue-background-vector-45998213.jpg');
+    background-size: cover, cover;
+    background-position: center, center;
+    background-attachment: fixed; /* Keeps the background stationary */
+}
+
+/* Carousel Styles */
+.carousel-container {
+    width: 90%;
+    margin: 2rem auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.carousel-container::before,
+.carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px; /* Adjust as needed */
+    z-index: 2;
+    pointer-events: none;
+}
+
+.carousel-container::before {
+    left: 0;
+    background: linear-gradient(to right, #000428, transparent);
+}
+
+.carousel-container::after {
+    right: 0;
+    background: linear-gradient(to left, #000428, transparent);
+}
+
+
+.carousel-track {
+    display: flex;
+    width: calc(250px * 10); /* 250px per slide, 5 slides duplicated */
+    animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 5)); /* scroll the length of the original 5 slides */
+    }
+}
+
+.slide {
+    width: 250px;
+    height: 370px;
+    flex-shrink: 0;
+    padding: 0 10px;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* For Tablets and smaller */
+@media (max-width: 992px) {
+    header nav ul {
+        gap: 1.5rem;
+    }
+
+    .main-quote h1 {
+        font-size: 2rem;
+        margin: 1.5rem 1rem;
+    }
+
+    .logo-container {
+        margin-top: 80px;
+    }
+
+    main {
+        padding-top: 130px;
+    }
+}
+
+/* For Mobile Phones */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-wrap: wrap; /* Allow items to wrap */
+        gap: 0.5rem 1rem; /* row-gap and column-gap */
+        padding: 0 1rem;
+    }
+
+    header nav ul li a {
+        font-size: 1rem;
+    }
+
+    .logo-container {
+        margin-top: 120px; /* Adjust to give space for wrapped nav */
+    }
+
+    .logo {
+        width: 150px;
+    }
+
+    main {
+        padding-top: 150px; /* Adjust based on new logo margin */
+    }
+
+    .main-quote h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Adjust carousel for mobile */
+    .carousel-track {
+        width: calc(200px * 10); /* Smaller slide width */
+        animation-name: scroll-mobile;
+    }
+
+    @keyframes scroll-mobile {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-200px * 5));
+        }
+    }
+
+    .slide {
+        width: 200px;
+        height: 296px; /* Maintain aspect ratio */
+    }
+
+    .carousel-container::before,
+    .carousel-container::after {
+        width: 50px; /* Smaller fade effect */
+    }
+}
+
+/* --- Splash Screen Styles --- */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000428;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Highest z-index */
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+#splash-screen.hidden {
+    opacity: 0;
+    pointer-events: none; /* Make it non-interactive when hidden */
+}
+
+#splash-video {
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+}
